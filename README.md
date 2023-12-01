@@ -1,16 +1,10 @@
 # Next.js integration example using AuthKit
 
-An example application demonstrating how to authenticate users with AuthKit and the WorkOS Node SDK.
+This is a fork from workos/next-authkit-example with styles stripped.
 
 ## Project setup
 
-To get started, clone the repo:
-
-```bash
-git clone https://github.com/workos/next-authkit-example.git
-```
-
-Navigate to the cloned repo and install the dependencies:
+To get started, clone the repo and navigate to the cloned repo and install the dependencies:
 
 ```bash
 npm install
