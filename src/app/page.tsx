@@ -1,4 +1,3 @@
-import { Button, Flex, Heading, Text } from "@radix-ui/themes";
 import NextLink from "next/link";
 import { SignInButton } from "./components/sign-in-button";
 import { getUser } from "../auth";
@@ -7,31 +6,23 @@ export default async function HomePage() {
   const { isAuthenticated, user } = await getUser();
 
   return (
-    <Flex direction="column" align="center" gap="2">
+    <>
       {isAuthenticated ? (
         <>
-          <Heading size="8">
-            Welcome back{user?.firstName && `, ${user?.firstName}`}
-          </Heading>
-          <Text size="5" color="gray">
-            You are now authenticated into the application
-          </Text>
-          <Flex align="center" gap="3" mt="4">
-            <Button asChild size="3" variant="soft">
-              <NextLink href="/account">View account</NextLink>
-            </Button>
-            <SignInButton large />
-          </Flex>
+          <h1>Welcome back{user?.firstName && `, ${user?.firstName}`}</h1>
+          <p>You are now authenticated into the application</p>
+
+          <NextLink href="/account">View account</NextLink>
+
+          <SignInButton />
         </>
       ) : (
         <>
-          <Heading size="8">AuthKit authentication example</Heading>
-          <Text size="5" color="gray" mb="4">
-            Sign in to view your account details
-          </Text>
+          <h1>AuthKit authentication example</h1>
+          <p>Sign in to view your account details</p>
           <SignInButton large />
         </>
       )}
-    </Flex>
+    </>
   );
 }
